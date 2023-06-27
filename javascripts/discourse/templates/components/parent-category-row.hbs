@@ -54,17 +54,15 @@
 			<td class="latest">
 				{{#if this.category.topics.length}}
 					{{#each this.category.topics}}
-					{{#let this.category.topics.[this] as |topic|}}
 						<span class="categories-latest-topic-avatar">
 							<a
-								href="/discuss/u/{{topic.last_poster.username}}"
-								data-user-card={{topic.last_poster.username}}
+								href="/discuss/u/{{this.last_poster.username}}"
+								data-user-card={{this.last_poster.username}}
 							>
-								{{avatar topic.last_poster imageSize="small"}}
+								{{avatar this.last_poster imageSize="small"}}
 							</a>
 						</span>
-						<FeaturedTopic @topic={{topic}} />
-					{{/let}}
+						<FeaturedTopic @topic={{this}} />
 					{{/each}}
 					{{else}}
 						<li class="empty-topic"></li>
