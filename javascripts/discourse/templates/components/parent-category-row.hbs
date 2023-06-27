@@ -54,6 +54,7 @@
 			<td class="latest">
 				{{#if this.category.topics.length}}
 					{{#each this.category.topics as |topic|}}
+					<div class="featured-topic">
 						<span class="categories-latest-topic-avatar">
 							<a
 								href="/discuss/u/{{topic.last_poster.username}}"
@@ -63,6 +64,7 @@
 							</a>
 						</span>
 						<FeaturedTopic @topic={{topic}} />
+					</div>
 					{{/each}}
 					{{else}}
 						<li class="empty-topic"></li>
