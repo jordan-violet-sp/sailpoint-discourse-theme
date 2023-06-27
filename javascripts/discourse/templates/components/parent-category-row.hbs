@@ -53,16 +53,16 @@
 		{{#if showTopics}}
 			<td class="latest">
 				{{#if this.category.topics.length}}
-					{{#each this.category.topics}}
+					{{#each this.category.topics as |topic|}}
 						<span class="categories-latest-topic-avatar">
 							<a
-								href="/discuss/u/{{this.last_poster.username}}"
-								data-user-card={{this.last_poster.username}}
+								href="/discuss/u/{{topic.last_poster.username}}"
+								data-user-card={{topic.last_poster.username}}
 							>
-								{{avatar this.last_poster imageSize="small"}}
+								{{avatar topic.last_poster imageSize="small"}}
 							</a>
 						</span>
-						<FeaturedTopic @topic={{this}} />
+						<FeaturedTopic @topic={{topic}} />
 					{{/each}}
 					{{else}}
 						<li class="empty-topic"></li>
