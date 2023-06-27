@@ -136,6 +136,7 @@ table.category-list {
     &.latest {
       display: flex;
       align-items: center;
+      flex-direction: column;
 
       .featured-topic {
         margin-top: 0;
